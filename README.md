@@ -13,8 +13,7 @@ This repository contains the **React** frontend for the EasyGenerator applicatio
 
 ---
 
-![image](https://github.com/user-attachments/assets/2403e443-fa49-4a97-8088-a7cd9aed5837) ![image](https://github.com/user-attachments/assets/48f158c5-37c5-4062-8d5e-bc348d6c3af2)
-
+![combined_mockup_transparent](https://github.com/user-attachments/assets/ed627194-e05f-4df5-b280-e90da0667fc1)
 
 ---
 
