@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+@import './styles/loader.css';
+
+/* Global base styles */
+@layer base {
+  
+  body,#root {
+    font-family:  'Poppins', sans-serif;
+    @apply text-sm text-white;
+    @apply  h-screen w-screen bg-neutral-900 
+    flex flex-col justify-center content-center items-center;
+  }
+  
+  button{
+    @apply p-2 md:p-3 cursor-pointer transition duration-200;
+
+    @apply text-neutral-800 font-medium rounded-full
+     bg-white hover:bg-white hover:ring-4 hover:ring-white/20 transition
+      px-5 py-2.5 text-center focus:outline-none 
+      disabled:cursor-not-allowed disabled:opacity-40;
+  }
+}
+
+/* Component classes */
+@layer components {
+  .auth-layout {
+    @apply grid grid-cols-12 
+    w-full max-w-md md:max-w-screen-lg
+    h-full md:max-h-full md:my-10
+    bg-neutral-800 
+    rounded-2xl p-1 relative m-auto;
+  }
+
+  /* Left column */
+    .auth-left {
+      @apply col-span-12 md:col-span-7 relative z-10 bg-cover bg-bottom 
+      sm:bg-center 
+      md:bg-right-bottom 
+      p-6
+      rounded-b-xl md:rounded-xl 
+      flex flex-col justify-center items-start
+      overflow-hidden 
+      transition-all;
+    }
+
+    .auth-left::after {
+      content: "";      
+      @apply absolute inset-0 z-0 p-4;
+      background: url('assets/course-hero.jpg') no-repeat center/cover;
+      opacity: 0.1;
+      overflow: hidden;
+    }
+
+
+  .auth-left-heading {
+    @apply text-white text-2xl md:text-4xl font-bold mb-4;
+  }
+  .auth-left-subtitle {
+    @apply text-white text-sm;
+  }
+  .auth-left-image {
+    @apply mt-8 max-w-xs;
+  }
+
+  /* Right column */  
+  .auth-right {
+    @apply col-span-12 md:col-span-5 z-10 flex-col flex md:pl-5 md:pr-5 md:py-5 px-5 py-5 justify-center;
+    overflow: hidden; 
+  }
+  
+  .auth-card {
+    @apply relative z-10 p-4 md:p-8 md:m-auto w-full rounded-3xl border-neutral-300 shadow-2xl ring-neutral-300;
+  }
+
+  .auth-body {
+    @apply w-full shadow-sm bg-neutral-900/50 p-4 md:p-8 mb-4 rounded-md;
+  } 
+
+  .auth-title {
+    @apply text-xl md:text-3xl mb-1 text-gray-100;
+  }
+  .auth-subtitle {
+    @apply text-sm text-gray-300 mb-5 hover:underline;
+  }
+
+  .auth-label {
+    @apply block mb-1
+    text-white tracking-wide;
+  }
+
+  .auth-input {
+    @apply w-full p-2 mb-2 md:mb-4;
+
+    @apply mb-2 md:font-medium;
+    @apply rounded-lg block w-full p-2.5 
+    bg-neutral-900 transition placeholder-gray-400 
+    text-white outline-none border
+    border-neutral-700 hover:border-neutral-600 focus:border-neutral-500;
+  }
+  
+  .auth-input-error {
+    @apply w-full p-2 mb-2 md:mb-4;
+
+    @apply mb-2 md:font-medium;
+    @apply rounded-lg block w-full p-2.5 
+    bg-neutral-900 transition placeholder-gray-400 
+    text-white outline-none border
+    border-red-700 hover:border-red-600 focus:border-red-500;
+  }
+
+  
+  .auth-button {
+    @apply mt-4 w-full;
+  }
+  .auth-error {
+    @apply mb-4 text-red-500 text-center;
+  }
+  .auth-footer {
+    @apply mt-2 text-center text-gray-400;
+  }
+  .auth-link {
+    @apply text-gray-300 hover:underline;
+  }
+
+  /* Simple bullet list to highlight platform features */
+  .auth-highlights {
+    @apply mt-6 text-sm text-white list-disc list-inside hidden md:block;
+  }
+  .auth-highlights li {
+    @apply mb-4;
+  }
+  .auth-highlights li::marker {
+    content: "✓ ";
+    color: #10B981; 
+  }
+}
+
