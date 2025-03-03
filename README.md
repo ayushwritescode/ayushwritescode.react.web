@@ -1,54 +1,150 @@
-# React + TypeScript + Vite
+# EasyGenerator Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the **React** frontend for the EasyGenerator application. It leverages:
 
-Currently, two official plugins are available:
+- **Responsive Design** for cross device compatibility  
+- **Redux Toolkit** for state management  
+- **Tailwind CSS** for styling  
+- **Axios** for secure API calls  
+- **AOS** for scroll-based animations  
+- **JWT-based authentication** (access token in Redux, refresh token in HTTP-only cookie)  
+- **CSRF Protection & Secure API Requests**  
+- **Content Security Policy (CSP) Implementation to mitigate XSS attacks**  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+![combined_mockup_transparent](https://github.com/user-attachments/assets/ed627194-e05f-4df5-b280-e90da0667fc1)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Key Highlights
+
+1. **Modular Design**  
+   - Organized by feature (e.g., `views/Login`, `views/Signup`), plus shared components in `/components`.
+
+2. **Redux Toolkit for State Management**  
+   - Uses slices (e.g. `authSlice`) and async thunks for API interactions (login, signup, refresh token).
+
+3. **Tailwind CSS for Styling**  
+   - Utility-first approach for rapid UI development, responsive design, and consistency.
+
+4. **Animations & AOS Integration**  
+   - Scroll animations, fade effects, and smooth transitions for an enhanced UX.
+
+5. **Secure API Calls with Axios**  
+   - Implements interceptors for automatic token handling (refresh, authorization headers).
+
+6. **CSRF Protection & Secure Requests**  
+   - Ensures all API requests follow CSRF protection mechanisms.
+
+7. **Strict Content Security Policy (CSP) Implementation**  
+   - Helps prevent XSS attacks by restricting content sources.
+
+8. **Lazy Loading & Code Splitting**  
+   - Improves performance by loading only required components and splitting large bundles.
+
+---
+
+## Project Structure
+
+```
+frontend/
+├─ src/
+│  ├─ components/
+│  ├─ views/
+│  ├─ store/
+│  ├─ hooks/
+│  ├─ utils/
+│  ├─ assets/
+│  └─ App.tsx
+├─ package.json
+└─ README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **`store/`**: Redux slices (auth, user, etc.) + thunks.  
+- **`components/`**: Reusable UI components (EGInput, EGButton, etc.).  
+- **`views/`**: Page-level features (Login, Signup, Dashboard).  
+- **`hooks/`**: Custom React hooks for better code abstraction.  
+- **`utils/`**: Helper functions for API calls, validations, and configurations.  
+- **`assets/`**: Static assets like images and icons.  
+- **`App.tsx`**: Root component handling routes, global providers, etc.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Local Development Setup
+
+### Prerequisites
+
+- **Node.js v16+**
+- **npm** or **yarn**
+- Running **Backend** API (NestJS, Express, etc.) to handle requests
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ayushwritescode/easygenerator.web.git
+cd easygenerator.web
 ```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Configure Environment
+
+Check for **`.env`** or `.env.development`:
+```
+VITE_API_BASE_URL=http://localhost:3000
+```
+Adjust if your backend is on a different host/port.
+
+### 4. Run Locally
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open the URL shown in the terminal (commonly `http://localhost:5173`) in your browser.
+
+### 5. Production Build
+
+```bash
+npm run build
+npm run preview
+# or
+yarn build
+yarn preview
+```
+
+The compiled assets go into `dist/`. You can serve them with **Nginx** or any static file server.
+
+---
+
+## Platform Requirements
+
+- Node.js **v16+**
+- npm or yarn
+- Access to the **Backend** API for authentication and data
+
+---
+
+## Contributing
+
+1. **Fork** the repository  
+2. **Create** a branch: `git checkout -b feature/my-feature`  
+3. **Commit** changes: `git commit -m 'Add some feature'`  
+4. **Push** to GitHub: `git push origin feature/my-feature`  
+5. **Open** a Pull Request  
+
+---
+
+## License
+
+[MIT](LICENSE) © 2025 ayushwritescode
+
