@@ -9,9 +9,7 @@ This repository contains the **React** frontend for the EasyGenerator applicatio
 - **Tailwind CSS** for styling  
 - **Axios** for secure API calls  
 - **AOS** for scroll-based animations  
-- **JWT-based authentication** (access token in Redux, refresh token in HTTP-only cookie)  
-- **CSRF Protection & Secure API Requests**  
-- **Content Security Policy (CSP) Implementation to mitigate XSS attacks**  
+- **JWT-based authentication** (access token in Redux, refresh token in HTTP-only cookie in order to prevent XSS attacks)
 
 ---
 
