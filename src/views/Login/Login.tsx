@@ -12,17 +12,7 @@ import { loginSchema } from '../../validation/authValidation';
 export const Login: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { loading, isAuthenticated, accessToken, user } = useAppSelector((state) => state.auth);
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      if (accessToken && user) {
-        navigate('/dashboard');
-      }
-    }
-  }, [isAuthenticated, accessToken, user]);
-
-
+  const { loading } = useAppSelector((state) => state.auth);
 
   const {
     register,

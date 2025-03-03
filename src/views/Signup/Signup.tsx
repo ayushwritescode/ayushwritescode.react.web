@@ -13,15 +13,8 @@ export const Signup: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const { loading, isAuthenticated, accessToken, user } = useAppSelector((state) => state.auth);
+  const { loading} = useAppSelector((state) => state.auth);
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      if (accessToken && user) {
-        navigate('/dashboard');
-      }
-    }
-  }, [isAuthenticated, accessToken, user]);
 
 
   const {
