@@ -1,12 +1,10 @@
 import { Navigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { useAppSelector } from '../store/hooks';
 import { JSX } from 'react';
 
 const PrivateRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
 
-  const {loading,isAuthenticated} = useAppSelector((state) => state.auth);
-  const dispatch = useAppDispatch()
-  
+  const {loading,isAuthenticated} = useAppSelector((state) => state.auth);  
 
   if(!loading){
     if (isAuthenticated){
