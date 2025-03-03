@@ -4,8 +4,16 @@ import { JSX } from 'react';
 
 const PrivateRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
 
-  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
-  return isAuthenticated ? children : <Navigate to="/login" replace />;
+  const {loading,isAuthenticated} = useAppSelector((state) => state.auth);
+
+    if (isAuthenticated){
+      return children; 
+    }
+    else{
+      return <Navigate to="/login" replace />
+    }
+  
+
 };
 
 export default PrivateRoute;

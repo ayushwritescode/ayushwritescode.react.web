@@ -5,14 +5,18 @@ import { JSX } from 'react';
 const PUBLIC_ROUTES = ['/', '/login', '/signup'];
 
 const PublicRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
-  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+  const {loading,isAuthenticated} = useAppSelector((state) => state.auth);
   const location = useLocation();
 
+  if(!loading){
   if (isAuthenticated && PUBLIC_ROUTES.includes(location.pathname)) {
     return <Navigate to="/dashboard" replace />;
   }
+  else{
+    return children;
+  }
 
-  return children;
+}
 };
 
 export default PublicRoute;
