@@ -1,7 +1,8 @@
 # EasyGenerator Frontend
 
+Hosted on AWS Amplify with CI/CD (Live Demo: https://main.d1eyfvmlmldfot.amplifyapp.com/) 
+
 This repository contains the **React** frontend for the EasyGenerator application. It leverages:
-Hosted on AWS Amplify with CI/CD (https://main.d1eyfvmlmldfot.amplifyapp.com/) 
 
 - **Responsive Design** for cross device compatibility  
 - **Redux Toolkit** for state management  
