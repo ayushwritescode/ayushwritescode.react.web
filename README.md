@@ -1,4 +1,4 @@
-# EasyGenerator Frontend
+# Frontend
 
 Hosted on AWS Amplify with CI/CD (Live Demo: https://main.d1eyfvmlmldfot.amplifyapp.com/) 
 
